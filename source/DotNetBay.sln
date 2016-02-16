@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.Core", "DotNetBay
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.Data.FileStorage", "DotNetBay.Data.FileStorage\DotNetBay.Data.FileStorage.csproj", "{92942123-C7EC-4418-9B48-F5D62BE7E7A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.Common", "DotNetBay.Common\DotNetBay.Common.csproj", "{316A27FF-F33D-4036-B1CC-1342496E06CD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.Model", "DotNetBay.Model\DotNetBay.Model.csproj", "{908D8739-3185-46EB-A03E-6B6C3849857C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.Interfaces", "DotNetBay.Interfaces\DotNetBay.Interfaces.csproj", "{17745E6C-337C-44BD-9C50-5F1D45CEADA5}"
@@ -41,10 +39,6 @@ Global
 		{92942123-C7EC-4418-9B48-F5D62BE7E7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92942123-C7EC-4418-9B48-F5D62BE7E7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92942123-C7EC-4418-9B48-F5D62BE7E7A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{316A27FF-F33D-4036-B1CC-1342496E06CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{316A27FF-F33D-4036-B1CC-1342496E06CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{316A27FF-F33D-4036-B1CC-1342496E06CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{316A27FF-F33D-4036-B1CC-1342496E06CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{908D8739-3185-46EB-A03E-6B6C3849857C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{908D8739-3185-46EB-A03E-6B6C3849857C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{908D8739-3185-46EB-A03E-6B6C3849857C}.Release|Any CPU.ActiveCfg = Release|Any CPU
