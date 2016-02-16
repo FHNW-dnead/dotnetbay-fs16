@@ -2,7 +2,7 @@
 Master: [![Build status](https://ci.appveyor.com/api/projects/status/l1ook550stg4kxtg/branch/master?svg=true)](https://ci.appveyor.com/project/michaelschnyder/dotnetbay-hs15/branch/master)
 Project: [![Build status](https://ci.appveyor.com/api/projects/status/l1ook550stg4kxtg?svg=true)](https://ci.appveyor.com/project/michaelschnyder/dotnetbay-hs15)
 
-A bootstrap solution to build your own basic auction portal. For an implementation example visit https://github.com/michaelschnyder/dotnetbay-hs15
+A bootstrap solution to build your own basic auction portal. For an implementation example visit https://github.com/michaelschnyder/dotnetbay-fs16
 
 ## Goals
 This is the starting point for various extensions to the core business library. The current storage implementation is done by serializing data to json-files. There is no graphical user interface, just a command line.
