@@ -33,6 +33,7 @@ The following products / tools are needed to contribute / fork.
 ## Authors
 * Michael Schnyder
 * Martin Kropp
+* noname
 
 ## License
 Licensed under the MIT License
