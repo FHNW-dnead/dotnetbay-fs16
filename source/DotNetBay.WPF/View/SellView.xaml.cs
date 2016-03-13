@@ -3,13 +3,11 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
-
 using DotNetBay.Core;
 using DotNetBay.Model;
-
 using Microsoft.Win32;
 
-namespace DotNetBay.WPF
+namespace DotNetBay.WPF.View
 {
     /// <summary>
     /// Interaction logic for SellView.xaml
@@ -24,7 +22,7 @@ namespace DotNetBay.WPF
         {
             get
             {
-                return newAuction;
+                return this.newAuction;
             }
         }
 

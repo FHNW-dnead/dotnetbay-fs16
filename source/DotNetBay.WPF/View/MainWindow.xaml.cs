@@ -2,12 +2,11 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-
 using DotNetBay.Core;
 using DotNetBay.Core.Execution;
 using DotNetBay.Model;
 
-namespace DotNetBay.WPF
+namespace DotNetBay.WPF.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -98,7 +97,7 @@ namespace DotNetBay.WPF
         {
             var currentAuction = (Auction)this.AuctionsDataGrid.SelectedItem;
 
-            var sellView = new BidView(currentAuction);
+            var sellView = new View.BidView(currentAuction);
             sellView.ShowDialog(); // Blocking
         }
 
