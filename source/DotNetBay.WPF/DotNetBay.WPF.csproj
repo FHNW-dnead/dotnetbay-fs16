@@ -75,6 +75,12 @@
     </ApplicationDefinition>
     <Compile Include="Converter\DebugConverter.cs" />
     <Compile Include="Converter\IsClosedToStatusConverter.cs" />
+    <Compile Include="ViewModel\AuctionViewModel.cs" />
+    <Compile Include="ViewModel\BidViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\SellViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\BidView.xaml.cs">
       <DependentUpon>BidView.xaml</DependentUpon>
     </Compile>
@@ -152,9 +158,7 @@
       <Name>DotNetBay.Test</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
