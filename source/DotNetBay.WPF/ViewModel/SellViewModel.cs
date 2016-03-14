@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
@@ -55,6 +56,17 @@ namespace DotNetBay.WPF.ViewModel
             set { this.Set(() => this.FilePathToImage, ref this.filePathToImage, value); }
         }
 
+        public bool AuctionIsValid(Auction newAuction)
+        {
+            if (string.IsNullOrEmpty(this.Title)) return false;
+            if (string.IsNullOrEmpty(this.Description)) return false;
+            if (this.StartPrice <= 0) return false;
+
+            if (this.EndDateTimeUtc < DateTime.Now) return false;
+
+            return true;
+        }
+
         private void AddActionAndClose(Window window)
         {
             var newAuction = new Auction()
@@ -75,6 +87,7 @@ namespace DotNetBay.WPF.ViewModel
             this.auctionService.Save(newAuction);
 
             window.Close();
+
         }
 
         private void SelectFolderAction()
