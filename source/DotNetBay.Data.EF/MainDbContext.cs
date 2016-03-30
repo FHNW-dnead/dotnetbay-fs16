@@ -8,7 +8,7 @@ using DotNetBay.Model;
 
 namespace DotNetBay.Data.EF
 {
-    class MainDbContext : DbContext
+    public class MainDbContext : DbContext
     {
         public MainDbContext() : base("DatabaseConnection")
         {
