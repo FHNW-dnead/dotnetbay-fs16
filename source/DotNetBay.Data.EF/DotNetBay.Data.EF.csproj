@@ -52,6 +52,11 @@
     <Compile Include="DateTime2Conventions.cs" />
     <Compile Include="EFMainRepository.cs" />
     <Compile Include="MainDbContext.cs" />
+    <Compile Include="Migrations\201603302017053_FirstChange.cs" />
+    <Compile Include="Migrations\201603302017053_FirstChange.Designer.cs">
+      <DependentUpon>201603302017053_FirstChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +72,11 @@
       <Project>{908d8739-3185-46eb-a03e-6b6c3849857c}</Project>
       <Name>DotNetBay.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201603302017053_FirstChange.resx">
+      <DependentUpon>201603302017053_FirstChange.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
