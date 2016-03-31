@@ -39,28 +39,31 @@ namespace DotNetBay.WebApp.Controllers
         [HttpPost]
         public ActionResult Create(NewAuctionViewModel auction)
         {
-            var members = new SimpleMemberService(this.mainRepository);
-
-            var newAuction = new Auction()
+            if (this.ModelState.IsValid)
             {
-                Title = auction.Title,
-                Description = auction.Description,
-                StartDateTimeUtc = auction.StartDateTimeUtc,
-                EndDateTimeUtc = auction.EndDateTimeUtc,
-                StartPrice = auction.StartPrice,
-                Seller = members.GetCurrentMember()
-            };
+                var members = new SimpleMemberService(this.mainRepository);
 
-            // Get File Contents
-            if (auction.Image != null)
-            {
-                byte[] fileContent = new byte[auction.Image.InputStream.Length];
-                auction.Image.InputStream.Read(fileContent, 0, fileContent.Length);
+                var newAuction = new Auction()
+                {
+                    Title = auction.Title,
+                    Description = auction.Description,
+                    StartDateTimeUtc = auction.StartDateTimeUtc,
+                    EndDateTimeUtc = auction.EndDateTimeUtc,
+                    StartPrice = auction.StartPrice,
+                    Seller = members.GetCurrentMember()
+                };
 
-                newAuction.Image = fileContent;
+                // Get File Contents
+                if (auction.Image != null)
+                {
+                    byte[] fileContent = new byte[auction.Image.InputStream.Length];
+                    auction.Image.InputStream.Read(fileContent, 0, fileContent.Length);
+
+                    newAuction.Image = fileContent;
+                }
+
+                this.service.Save(newAuction);
             }
-
-            this.service.Save(newAuction);
 
             return RedirectToAction("Index");
         }

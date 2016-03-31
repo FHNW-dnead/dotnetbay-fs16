@@ -4,7 +4,7 @@
     ViewBag.Title = "Auctions";
 }
 
-<h2>Index</h2>
+<h2>Auctions</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -86,14 +86,21 @@
             @Html.DisplayFor(modelItem => item.EndDateTimeUtc)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CloseDateTimeUtc)
+            @if (item.IsClosed)
+            {
+                @Html.DisplayFor(modelItem => item.CloseDateTimeUtc)
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ActiveBid.Bidder.DisplayName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
-            @Html.ActionLink("Details", "Details", new {id = item.Id}) |
+            @if (!item.IsClosed)
+            {
+                @Html.ActionLink("Bid", "Bid", new {id = item.Id}) 
+                @:|
+            } 
+            @Html.ActionLink("Details", "Details", new {id = item.Id})
         </td>
     </tr>
 }
