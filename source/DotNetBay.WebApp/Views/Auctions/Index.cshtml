@@ -1,0 +1,91 @@
+﻿@model IEnumerable<DotNetBay.Model.Auction>
+
+@{
+    ViewBag.Title = "Auctions";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDateTimeUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDateTimeUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CloseDateTimeUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsClosed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsRunning)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+
+    var color = "";
+
+    if (item.IsRunning)
+    {
+        color = "#C0EBB5";
+    }
+    else if (item.IsClosed)
+    {
+        color = "#EBB5B5";
+    }
+
+    <tr style="background-color: @color">>
+        <td>
+            <b>@Html.DisplayFor(modelItem => item.Title)</b><br />
+            <p style="text-align: center">
+
+                <img src="/Auctions/Image?auctionId=@item.Id" style="max-height: 120px; max-width: 180px" />
+            </p>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDateTimeUtc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDateTimeUtc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CloseDateTimeUtc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsClosed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsRunning)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+            @Html.ActionLink("Details", "Details", new {id = item.Id}) |
+            @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+        </td>
+    </tr>
+}
+
+</table>
