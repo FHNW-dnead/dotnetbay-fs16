@@ -117,16 +117,19 @@
     <Content Include="Web.config" />
     <Content Include="Views\Auctions\Index.cshtml" />
     <Content Include="Views\Auctions\Create.cshtml" />
+    <Content Include="Views\Bids\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuctionsController.cs" />
+    <Compile Include="Controllers\BidsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\NewAuctionViewModel.cs" />
+    <Compile Include="ViewModel\NewBidViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

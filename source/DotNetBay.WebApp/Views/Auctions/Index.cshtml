@@ -21,6 +21,13 @@
             @Html.DisplayNameFor(model => model.StartPrice)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.CurrentPrice)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Bids.Count)
+        </th> 
+        <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
@@ -77,6 +84,12 @@
             @Html.DisplayFor(modelItem => item.StartPrice)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.CurrentPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bids.Count)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
@@ -97,7 +110,7 @@
         <td>
             @if (!item.IsClosed)
             {
-                @Html.ActionLink("Bid", "Bid", new {id = item.Id}) 
+                @Html.ActionLink("Bid", "Create", "Bids", new { AuctionId = item.Id }, null)
                 @:|
             } 
             @Html.ActionLink("Details", "Details", new {id = item.Id})
