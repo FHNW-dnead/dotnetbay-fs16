@@ -2,6 +2,8 @@
 using System;
 
 using DotNetBay.WebApi;
+using DotNetBay.WebApi.Controller;
+using System.Net.Http;
 
 namespace DotNetBay.SelfHost
 {
@@ -14,12 +16,19 @@ namespace DotNetBay.SelfHost
         {
             var type = typeof(StatusController);
 
-            Console.WriteLine("DotNetBay SelfHost");
+            var host = "http://localhost:9001/";
 
-            using (WebApp.Start<Startup>(url: "http://localhost:9001/"))
+            using (WebApp.Start<Startup>(url: host))
             {
+                // SelfCheck
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(host);
 
+                var response = client.GetAsync("/api/status").Result;
 
+                Console.WriteLine(response);
+
+                Console.Write("Press enter to quit.");
                 Console.ReadLine();
             }
         }
