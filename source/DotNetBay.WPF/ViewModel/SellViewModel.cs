@@ -14,15 +14,12 @@ namespace DotNetBay.WPF.ViewModel
 {
     public class SellViewModel : ViewModelBase
     {
-        private readonly IMemberService memberService;
-
         private readonly IAuctionService auctionService;
 
         private string filePathToImage;
 
-        public SellViewModel(IMemberService memberService, IAuctionService auctionService)
+        public SellViewModel(IAuctionService auctionService)
         {
-            this.memberService = memberService;
             this.auctionService = auctionService;
 
             this.SelectImageFileCommand = new RelayCommand(this.SelectFolderAction);
@@ -76,7 +73,6 @@ namespace DotNetBay.WPF.ViewModel
                 StartPrice = this.StartPrice,
                 StartDateTimeUtc = this.StartDateTimeUtc,
                 EndDateTimeUtc = this.EndDateTimeUtc,
-                Seller = this.memberService.GetCurrentMember(),
             };
 
             if (!string.IsNullOrEmpty(this.FilePathToImage))

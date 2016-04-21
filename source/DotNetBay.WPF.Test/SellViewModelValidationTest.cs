@@ -12,7 +12,7 @@ namespace DotNetBay.WPF.Test
         [TestCase]
         public void TestValidation()
         {
-            SellViewModel viewModel = new SellViewModel(null, null);
+            SellViewModel viewModel = new SellViewModel(null);
 
             // test for valid value
             Assert.IsFalse(viewModel.AuctionIsValid(new Auction()));

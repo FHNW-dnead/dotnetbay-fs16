@@ -9,15 +9,12 @@ namespace DotNetBay.WPF.ViewModel
 {
     public class BidViewModel : ViewModelBase
     {
-        private readonly IMemberService memberService;
-
         private readonly IAuctionService auctionService;
 
         private readonly Auction selectedAuction;
 
-        public BidViewModel(Auction selectedAuction, IMemberService memberService, IAuctionService auctionService)
+        public BidViewModel(Auction selectedAuction, IAuctionService auctionService)
         {
-            this.memberService = memberService;
             this.auctionService = auctionService;
             this.selectedAuction = selectedAuction;
 
