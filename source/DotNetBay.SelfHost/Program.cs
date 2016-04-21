@@ -1,9 +1,9 @@
 ﻿using Microsoft.Owin.Hosting;
 using System;
-
-using DotNetBay.WebApi;
-using DotNetBay.WebApi.Controller;
 using System.Net.Http;
+using System.Data.Entity.SqlServer;
+
+using DotNetBay.WebApi.Controllers;
 
 namespace DotNetBay.SelfHost
 {
@@ -14,8 +14,7 @@ namespace DotNetBay.SelfHost
     {
         public static void Main()
         {
-            var type = typeof(StatusController);
-
+            var typesLoaded = new[] { typeof(StatusController), typeof(SqlProviderServices) };
             var host = "http://localhost:9001/";
 
             using (WebApp.Start<Startup>(url: host))
