@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -11,9 +10,9 @@ using System.Web.Http;
 using DotNetBay.Core;
 using DotNetBay.Data.EF;
 using DotNetBay.Model;
-using DotNetBay.WebApi.Dtos;
+using DotNetBay.WebApi.Models;
 
-namespace DotNetBay.WebApi.Controller
+namespace DotNetBay.WebApi.Controllers
 {
     public class AuctionController : ApiController
     {

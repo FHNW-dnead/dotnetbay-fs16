@@ -6,9 +6,9 @@ using DotNetBay.Core;
 using DotNetBay.Data.EF;
 using DotNetBay.Interfaces;
 using DotNetBay.Model;
-using DotNetBay.WebApi.Dtos;
+using DotNetBay.WebApi.Models;
 
-namespace DotNetBay.WebApi.Controller
+namespace DotNetBay.WebApi.Controllers
 {
     public class BidsController : ApiController
     {

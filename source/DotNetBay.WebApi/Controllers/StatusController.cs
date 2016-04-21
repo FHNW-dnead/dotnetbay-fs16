@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace DotNetBay.WebApi.Controller
+namespace DotNetBay.WebApi.Controllers
 {
     public class StatusController : ApiController
     {
