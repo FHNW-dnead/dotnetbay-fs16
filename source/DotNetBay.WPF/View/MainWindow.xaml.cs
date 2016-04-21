@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 
 using DotNetBay.Core;
+using DotNetBay.WPF.Services;
 using DotNetBay.WPF.ViewModel;
 
 namespace DotNetBay.WPF.View
@@ -16,10 +17,9 @@ namespace DotNetBay.WPF.View
 
             var app = Application.Current as App;
 
-            var memberService = new SimpleMemberService(app.MainRepository);
-            var auctionService = new AuctionService(app.MainRepository, memberService);
+            var auctionService = new RemoteAuctionService();
 
-            this.DataContext = new MainViewModel(app.AuctionRunner.Auctioneer, auctionService);
+            this.DataContext = new MainViewModel(null, auctionService);
         }
     }
 }
