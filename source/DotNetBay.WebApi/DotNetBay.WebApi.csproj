@@ -52,11 +52,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AuctionController.cs" />
+    <Compile Include="Controllers\BidsController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Models\AuctionDto.cs" />
+    <Compile Include="Models\BidDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DotNetBay.Core\DotNetBay.Core.csproj">
+      <Project>{9ef46b21-b552-4cc6-a4c0-e81091a4064b}</Project>
+      <Name>DotNetBay.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DotNetBay.Data.EF\DotNetBay.Data.EF.csproj">
+      <Project>{68b98a5e-dc88-4a65-997f-b01c295b7eeb}</Project>
+      <Name>DotNetBay.Data.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DotNetBay.Interfaces\DotNetBay.Interfaces.csproj">
+      <Project>{17745e6c-337c-44bd-9c50-5f1d45ceada5}</Project>
+      <Name>DotNetBay.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DotNetBay.Model\DotNetBay.Model.csproj">
+      <Project>{908d8739-3185-46eb-a03e-6b6c3849857c}</Project>
+      <Name>DotNetBay.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
