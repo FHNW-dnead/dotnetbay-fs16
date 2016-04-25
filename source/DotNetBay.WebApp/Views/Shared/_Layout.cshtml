@@ -45,7 +45,14 @@
     <script src="~/signalr/hubs"></script>
 
     <script type="text/javascript">
-     $(function () {
+        $(function () {
+
+            var askForReload = function(text) {
+                if (confirm(text + "\n\n" + "Would you like to reload the page?")) {
+                    window.location.reload();
+                }
+            }
+
          // Reference the auto-generated proxy for the hub.
          var auctionsHub = $.connection.auctionsHub;
 
@@ -53,6 +60,13 @@
          $.connection.hub.start().done(function () {
              console.log("connected to hub");
          });
+
+         auctionsHub.client.newAuction = function () { askForReload("There was a new auction!") }
+         auctionsHub.client.newBid = function () { askForReload("There was a new bid!") }
+         auctionsHub.client.bidAccepted = function () { askForReload("A new bid was accepted.") }
+         auctionsHub.client.auctionStarted = function () { askForReload("An auction has started!") }
+         auctionsHub.client.auctionEnded = function () { askForReload("An auction has ended!") }
+
      });
     </script>
 
