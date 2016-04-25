@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.SignalR;
 using DotNetBay.Model;
+using System;
 
 namespace DotNetBay.SignalR
 {
@@ -8,6 +9,11 @@ namespace DotNetBay.SignalR
         public static void NotifyNewAuction(Auction auction)
         {
             GlobalHost.ConnectionManager.GetHubContext<AuctionsHub>().Clients.All.NewAuction(auction.Id);
+        }
+
+        public static void NotifyNewBid(Auction auction, Bid newBid)
+        {
+            GlobalHost.ConnectionManager.GetHubContext<AuctionsHub>().Clients.All.NotifyNewBid(auction.Id);
         }
 
         public static void NotifyBidAccepted(Auction auction, Bid bid)
@@ -24,6 +30,5 @@ namespace DotNetBay.SignalR
         {
             GlobalHost.ConnectionManager.GetHubContext<AuctionsHub>().Clients.All.NotifyAuctionEnded(auction.Id);
         }
-
     }
 }

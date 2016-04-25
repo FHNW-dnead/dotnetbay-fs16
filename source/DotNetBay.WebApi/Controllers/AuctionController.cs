@@ -11,6 +11,7 @@ using DotNetBay.Core;
 using DotNetBay.Data.EF;
 using DotNetBay.Model;
 using DotNetBay.WebApi.Models;
+using DotNetBay.SignalR;
 
 namespace DotNetBay.WebApi.Controllers
 {
@@ -60,6 +61,8 @@ namespace DotNetBay.WebApi.Controllers
             try
             {
                 this.auctionService.Save(theNewAuction);
+
+                AuctionsHub.NotifyNewAuction(theNewAuction);
 
                 return this.Created(string.Format("api/auctions/{0}", theNewAuction.Id), this.MapAuctionToDto(theNewAuction));
             }
