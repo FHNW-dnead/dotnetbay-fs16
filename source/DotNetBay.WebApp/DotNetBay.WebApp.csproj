@@ -219,6 +219,10 @@
       <Project>{908d8739-3185-46eb-a03e-6b6c3849857c}</Project>
       <Name>DotNetBay.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DotNetBay.SignalR\DotNetBay.SignalR.csproj">
+      <Project>{fb14e0ae-d580-4595-9fed-ca74b925d70e}</Project>
+      <Name>DotNetBay.SignalR</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DotNetBay.WebApi\DotNetBay.WebApi.csproj">
       <Project>{3f429864-7a53-449b-a129-82e3c4b2d81d}</Project>
       <Name>DotNetBay.WebApi</Name>
