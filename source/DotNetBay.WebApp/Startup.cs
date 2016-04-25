@@ -23,6 +23,8 @@ namespace DotNetBay.WebApp
 
             httpConfiguration.MapHttpAttributeRoutes();
 
+            app.MapSignalR();
+
             app.UseWebApi(httpConfiguration);
         }
     }
