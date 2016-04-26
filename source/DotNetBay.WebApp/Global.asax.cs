@@ -7,6 +7,8 @@ using System.Web.Routing;
 using DotNetBay.Core.Execution;
 using DotNetBay.Data.EF;
 using DotNetBay.SignalR;
+using Newtonsoft.Json;
+using Microsoft.AspNet.SignalR;
 
 namespace DotNetBay.WebApp
 {
@@ -22,6 +24,14 @@ namespace DotNetBay.WebApp
             // DotNetBay startup
             var mainRepository = new EFMainRepository();
             mainRepository.SaveChanges();
+
+            // SignalR Configuration
+            var serializerSettings = new JsonSerializerSettings();
+            serializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Serialize;
+            serializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.Objects;
+
+            var serializer = JsonSerializer.Create(serializerSettings);
+            GlobalHost.DependencyResolver.Register(typeof(JsonSerializer), () => serializer);
 
             AuctionRunner = new AuctionRunner(mainRepository);
 
