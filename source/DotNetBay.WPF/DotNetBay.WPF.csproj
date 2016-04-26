@@ -121,7 +121,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\RemoteAuctioneer.cs" />
+    <Compile Include="Services\RemoteAuctioneer.cs" />
     <Compile Include="View\SellView.xaml.cs">
       <DependentUpon>SellView.xaml</DependentUpon>
     </Compile>
