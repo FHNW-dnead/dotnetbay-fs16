@@ -21,6 +21,11 @@ namespace DotNetBay.SignalR
             GlobalHost.ConnectionManager.GetHubContext<AuctionsHub>().Clients.All.BidAccepted(auction, bid);
         }
 
+        public static void NotifyBidDeclined(Auction auction, Bid bid)
+        {
+            GlobalHost.ConnectionManager.GetHubContext<AuctionsHub>().Clients.All.BidDeclined(auction, bid);
+        }
+
         public static void NotifyAuctionStarted(Auction auction)
         {
             GlobalHost.ConnectionManager.GetHubContext<AuctionsHub>().Clients.All.AuctionStarted(auction);

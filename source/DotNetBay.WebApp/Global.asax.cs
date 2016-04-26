@@ -28,6 +28,9 @@ namespace DotNetBay.WebApp
             AuctionRunner.Auctioneer.BidAccepted += (sender, args) =>
                 { AuctionsHub.NotifyBidAccepted(args.Auction, args.Bid); };
 
+            AuctionRunner.Auctioneer.BidDeclined += (sender, args) =>
+                { AuctionsHub.NotifyBidDeclined(args.Auction, args.Bid); };
+
             AuctionRunner.Auctioneer.AuctionStarted += (sender, args) =>
                 { AuctionsHub.NotifyAuctionStarted(args.Auction); };
 
