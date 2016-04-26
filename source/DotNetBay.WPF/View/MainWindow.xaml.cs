@@ -18,8 +18,9 @@ namespace DotNetBay.WPF.View
             var app = Application.Current as App;
 
             var auctionService = new RemoteAuctionService();
+            var autioneer = new RemoteAuctioneer();
 
-            this.DataContext = new MainViewModel(null, auctionService);
+            this.DataContext = new MainViewModel(autioneer, auctionService);
         }
     }
 }
