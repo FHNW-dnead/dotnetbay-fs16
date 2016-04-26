@@ -25,13 +25,11 @@ namespace DotNetBay.WPF.ViewModel
             this.AddNewAuctionCommand = new RelayCommand(this.AddNewAuctionAction);
 
             // Register for Events
-            // TODO: Implement an RemoteAuctioneer with all the Events
-            /*
+            
             this.auctioneer.AuctionEnded += (sender, args) => { this.ApplyChanges(args.Auction); };
             this.auctioneer.AuctionStarted += (sender, args) => { this.ApplyChanges(args.Auction); };
             this.auctioneer.BidAccepted += (sender, args) => { this.ApplyChanges(args.Auction); };
             this.auctioneer.BidDeclined += (sender, args) => { this.ApplyChanges(args.Auction); };
-            */
 
             // Setup UI
             var allAuctions = this.auctionService.GetAll();
@@ -70,7 +68,7 @@ namespace DotNetBay.WPF.ViewModel
 
         private void ApplyChanges(Auction auction)
         {
-            var auctionVm = this.auctions.FirstOrDefault(vm => vm.Auction == auction);
+            var auctionVm = this.auctions.FirstOrDefault(vm => vm.Auction.Id == auction.Id);
 
             if (auctionVm != null)
             {

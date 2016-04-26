@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.Cmd", "DotNetBay.Cmd\DotNetBay.Cmd.csproj", "{EB070B8C-4CBF-425D-90FA-48834DBEE9B8}"
 EndProject
@@ -32,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.WebApi", "DotNetBay.WebApi\DotNetBay.WebApi.csproj", "{3F429864-7A53-449B-A129-82E3C4B2D81D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.SelfHost", "DotNetBay.SelfHost\DotNetBay.SelfHost.csproj", "{1F317BDA-1F7B-4E46-9642-CF9D1E7928C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.SignalR", "DotNetBay.SignalR\DotNetBay.SignalR.csproj", "{FB14E0AE-D580-4595-9FED-CA74B925D70E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{1F317BDA-1F7B-4E46-9642-CF9D1E7928C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F317BDA-1F7B-4E46-9642-CF9D1E7928C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F317BDA-1F7B-4E46-9642-CF9D1E7928C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB14E0AE-D580-4595-9FED-CA74B925D70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB14E0AE-D580-4595-9FED-CA74B925D70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB14E0AE-D580-4595-9FED-CA74B925D70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB14E0AE-D580-4595-9FED-CA74B925D70E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

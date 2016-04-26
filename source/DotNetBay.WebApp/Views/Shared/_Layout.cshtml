@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - DotNetbay ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -37,9 +37,39 @@
         </footer>
     </div>
 
-    <script src="~/Scripts/jquery-2.2.2.min.js"></script>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            var askForReload = function(text) {
+                if (confirm(text + "\n\n" + "Would you like to reload the page?")) {
+                    window.location.reload();
+                }
+            }
+
+         // Reference the auto-generated proxy for the hub.
+         var auctionsHub = $.connection.auctionsHub;
+
+         // Start the connection.
+         $.connection.hub.start().done(function () {
+             console.log("connected to hub");
+         });
+
+         auctionsHub.client.newAuction = function () { askForReload("There was a new auction!") }
+         auctionsHub.client.newBid = function () { askForReload("There was a new bid!") }
+         auctionsHub.client.bidAccepted = function () { askForReload("A new bid was accepted.") }
+         auctionsHub.client.bidDeclined = function () { askForReload("A new bid was declined.") }
+         auctionsHub.client.auctionStarted = function () { askForReload("An auction has started!") }
+         auctionsHub.client.auctionEnded = function () { askForReload("An auction has ended!") }
+
+     });
+    </script>
+
 </body>
 </html>
