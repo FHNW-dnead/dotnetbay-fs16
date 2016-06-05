@@ -57,5 +57,4 @@ namespace DotNetBay.Test.Storage
             return repo;
         }
     }
-
 }

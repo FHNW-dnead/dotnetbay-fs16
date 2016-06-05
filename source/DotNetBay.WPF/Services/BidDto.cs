@@ -17,6 +17,5 @@ namespace DotNetBay.WPF.Services
         public bool? Accepted { get; set; }
 
         public string AuctionTitle { get; set; }
-
     }
 }

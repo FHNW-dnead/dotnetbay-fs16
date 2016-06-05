@@ -43,6 +43,5 @@ namespace DotNetBay.WPF.Services
         public List<BidDto> Bids { get; set; }
 
         public BidDto ActiveBid { get; set; }
-
     }
 }

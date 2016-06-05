@@ -57,7 +57,6 @@ namespace DotNetBay.WebApp.Controllers
                 var newBid = this.service.PlaceBid(auction, bid.BidAmount);
 
                 AuctionsHub.NotifyNewBid(auction, newBid);
-
             }
 
             return this.RedirectToAction("Index", "Auctions");
