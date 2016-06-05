@@ -62,7 +62,6 @@ namespace DotNetBay.Data.EF.Migrations
                         EMail = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
-            
         }
         
         public override void Down()

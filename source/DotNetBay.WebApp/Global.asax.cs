@@ -36,7 +36,8 @@ namespace DotNetBay.WebApp
             AuctionRunner = new AuctionRunner(mainRepository);
 
             AuctionRunner.Auctioneer.BidAccepted += (sender, args) =>
-                { AuctionsHub.NotifyBidAccepted(args.Auction, args.Bid); };
+            #pragma warning disable SA1501 // Statement must not be on a single line
+            { AuctionsHub.NotifyBidAccepted(args.Auction, args.Bid); };
 
             AuctionRunner.Auctioneer.BidDeclined += (sender, args) =>
                 { AuctionsHub.NotifyBidDeclined(args.Auction, args.Bid); };
@@ -47,6 +48,7 @@ namespace DotNetBay.WebApp
             AuctionRunner.Auctioneer.AuctionEnded += (sender, args) =>
                 { AuctionsHub.NotifyAuctionEnded(args.Auction); };
 
+            #pragma warning restore SA1501 // Statement must not be on a single line
             AuctionRunner.Start();
         }
     }

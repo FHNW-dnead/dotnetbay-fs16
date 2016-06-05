@@ -1,9 +1,8 @@
-﻿using Microsoft.Owin.Hosting;
-using System;
-using System.Net.Http;
+﻿using System;
 using System.Data.Entity.SqlServer;
-
+using System.Net.Http;
 using DotNetBay.WebApi.Controllers;
+using Microsoft.Owin.Hosting;
 
 namespace DotNetBay.SelfHost
 {

@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNet.SignalR;
-using DotNetBay.Model;
-using System;
+﻿using DotNetBay.Model;
+using Microsoft.AspNet.SignalR;
 
 namespace DotNetBay.SignalR
 {

@@ -83,7 +83,6 @@ namespace DotNetBay.WPF.ViewModel
             this.auctionService.Save(newAuction);
 
             window.Close();
-
         }
 
         private void SelectFolderAction()

@@ -6,7 +6,6 @@ using NUnit.Framework;
 
 namespace DotNetBay.WPF.Test
 {
-
     public class SellViewModelValidationTest
     {
         [TestCase]
@@ -16,7 +15,6 @@ namespace DotNetBay.WPF.Test
 
             // test for valid value
             Assert.IsFalse(viewModel.AuctionIsValid(new Auction()));
-
         }
     }
 }

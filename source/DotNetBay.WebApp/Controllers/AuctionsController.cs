@@ -21,7 +21,6 @@ namespace DotNetBay.WebApp.Controllers
             this.mainRepository = new EFMainRepository();
 
             this.service = new AuctionService(this.mainRepository, new SimpleMemberService(this.mainRepository));
-
         }
 
         // GET: Auctions
@@ -88,6 +87,5 @@ namespace DotNetBay.WebApp.Controllers
 
             return new EmptyResult();
         }
-
     }
 }
